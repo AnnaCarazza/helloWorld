@@ -1,0 +1,34 @@
+/*This makes every paragraph in the website have a darkred font
+    and a specific font unless specified otherwise*/
+p {
+    color:darkred;
+    font-family: "Academy Engraved LET";
+}
+
+h2 {
+    color:brown;
+    font-weight: bold;
+}
+
+
+table, td, th {
+    border-style: solid;
+    border-color: darkred;
+}
+/*Here is a code for the special paragraph at the end of the website
+ with different formatting then the rest of the paragraphs*/
+p#special {
+    color: darkslategrey;
+    font-family: "Al Tarikh";
+}
+/*This is to add a background behind my unordered list*/
+.list {
+    background-color: darkgrey;
+    border: 4px darkred;
+    width: 300px
+}
+
+.logo {
+width: 267px;
+height: 72px;
+}
