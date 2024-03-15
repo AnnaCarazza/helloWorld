@@ -19,5 +19,18 @@ def about():  # put application's code here
 def aboutcss():  # put application's code here
     return render_template('about-css.html')
 
+@app.route('/bootstrap')
+def bootstrap():  # put application's code here
+    return render_template('bootstrap.html')
+
+@app.route('/practice1')
+def practice1():  # put application's code here
+    return render_template('practice1.html')
+
+@app.route('/practice2')
+def practice2():  # put application's code here
+    return render_template('practice2.html')
+
+
 if __name__ == '__main__':
     app.run()
