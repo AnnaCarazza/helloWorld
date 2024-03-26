@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request
 
 app = Flask(__name__)
 
@@ -9,6 +9,8 @@ def hello_world():  # put application's code here
 
 @app.route('/hello')
 def hello():  # put application's code here
+    print(f'First Name: {request.args.get("first_name")}')
+    print(f'Last Name: {request.args.get("last_name")}')
     return render_template('hello.html')
 
 @app.route('/about')
@@ -19,18 +21,19 @@ def about():  # put application's code here
 def aboutcss():  # put application's code here
     return render_template('about-css.html')
 
-@app.route('/bootstrap')
-def bootstrap():  # put application's code here
-    return render_template('bootstrap.html')
+@app.route('/favorite-course', methods=['GET', 'POST'])
+def favoritecourse():  # put application's code here
 
-@app.route('/practice1')
-def practice1():  # put application's code here
-    return render_template('practice1.html')
+    print(f'Subject: {request.args.get("subject")}')
+    print(f'Course Number: {request.args.get("course_number")}')
+    return render_template('favorite-course.html')
 
-@app.route('/practice2')
-def practice2():  # put application's code here
-    return render_template('practice2.html')
-
+@app.route('/contact', methods=['GET', 'POST'])
+def contact():  # put application's code here
+    if request.method == 'POST':
+        return render_template('contact.html', form_submitted=True)
+    else:
+        return render_template('contact.html')
 
 if __name__ == '__main__':
     app.run()
