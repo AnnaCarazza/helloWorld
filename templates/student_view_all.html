@@ -10,7 +10,7 @@
 {% endblock %}
 
 {% block page_content %}
-
+<!-- formats all the students in the system together in a visually appealing way only for admin(s) and manager(s) -->
     <div class="row">
     <div class="col">
 
@@ -33,6 +33,7 @@
             <td>{{ each_student['email'] }}</td>
             <td>{{ each_major['major'] }}</td>
             <td>{{ 'Yes' if each_student['is_honors'] == 1 else 'No' }}</td>
+            <!-- Allows admins to edit and delete students in the system, while manages just editing -->
             {% if current_user.role in ['ADMIN', 'MANAGER'] %}
             <td>
                 <a href="{{ url_for('student_edit', student_id=each_student['student_id']) }}" class="btn btn-secondary" role="button">Edit</a>
@@ -53,7 +54,7 @@
             Total Number of Students: {{ students|length }}
         </div>
     </div>
-
+        <!-- Add new student button that takes you to html page to creat a new student-->
     <div class="row">
         <div class="col text-center">
             <a href="{{ url_for('student_create') }}" class="btn btn-primary" role="button">Add New Student</a>

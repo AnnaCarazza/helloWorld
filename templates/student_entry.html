@@ -1,6 +1,6 @@
-
+<!-- html that /student/create and /student/update links to -->
 {% extends "base.html" %}
-
+<!-- gives options of creating/updating new students-->
 {% block page_title %}
     {% if action and action == 'create' %}
         Add New Student
@@ -37,7 +37,7 @@
 {% else %}
     <div class="row g-3">
 {% endif %}
-
+<!-- formats the student entry in a visually appealing way -->
   <div class="col-md-4">
     {% if action and action in ['create', 'update'] %}
     <label for="first_name" class="form-label"><strong>First Name</strong></label>
@@ -115,7 +115,7 @@
     {% endif %}
   </div>
   {% endif %}
-
+<!-- Gives the option of adding and updating a GPA for a given student -->
   <div class="col-12">
         {% if action and action in ['create', 'update'] %}
     <div class="form-check">
@@ -151,7 +151,7 @@
 {% if action and action in ['create', 'update'] %}
 </form>
 {% else %}
-    </div>
+
 {% endif %}
 {% endblock %}
 
